@@ -1,0 +1,9 @@
+{
+  "mysql" : {
+    "host": "database-server",
+    "user": "database-user",
+    "port": "database-port",
+    "database": "database",
+    "password": "database-user-password"
+  }
+}

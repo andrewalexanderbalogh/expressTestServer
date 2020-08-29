@@ -102,3 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Other directories
+.idea/
+.DS_Store
+
+# Private Files
+configs.json
