@@ -9,7 +9,12 @@ The `employees` database structure is as defined at;
 - https://github.com/datacharmer/test_db
 
 
-Start the API-Server through;
+### Setup 
+
+First create a `configs.json` file at the root of the project with values that follow 
+those given in the `configs.json.example` file.
+
+Then start the API-Server through;
 ```bash
 npm run start
 ```

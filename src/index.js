@@ -1,5 +1,6 @@
 'use strict';
 const app = require('express')();
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const httpcodes = require('http-status-codes');
 const fs = require('fs');
@@ -15,15 +16,7 @@ app.set('view engine', 'html');
 app.set('views', `${__dirname}/resources/views`);
 
 
-/* We will have these headers applied to all our http responses. */
-const responseHeaders = function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Allow-Control-Allow-Methods', 'GET,PUT,POST,PATCH,DELETE,OPTIONS');
-    res.header('Allow-Control-Allow-Headers', 'Content-Type');
-    res.header('Cache-Control', 'no-cache, max-age=0, stale-while-revalidate=300');
-    next();
-};
-app.use(responseHeaders);
+app.use(cors());                                        // Allow all requests through, no pre-flight checks
 app.use(bodyParser.urlencoded({ extended: false }));    // Parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                             // Parse application/json
 
@@ -207,9 +200,10 @@ app.get('*',
 
 
 /* Start up the server */
+const port = 8075;
 require('http')
     .createServer(app)
-    .listen(8075, () => {
+    .listen(port, () => {
         const startTime = DateTime.local().setZone('America/Toronto').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
-        console.log(`${DateTime}: Server-Started, listening on Port 8075`);
+        console.log(`${startTime}: Server-Started, listening on Port ${port}`);
     });
