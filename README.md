@@ -20,3 +20,18 @@ npm run start
 ```
 
 This will start the express server at `localhost:8075`
+
+
+### Endpoints
+
+- GET /departments  
+return all `departments` table entries
+
+- GET /employee/\<EMP_NO\>  
+return entries where `employee.emp_no == EMP_NO`  
+
+- GET /employees?gender=\<GENDER\>&hire_date=\<HIRE_DATE\>  
+return entries where `employee.hire_date >= HIRE_DATE && employee.gender == GENDER` 
+
+- POST http://localhost:8075/employees  
+create new `employee` entry
