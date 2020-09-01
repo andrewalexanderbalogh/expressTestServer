@@ -14,6 +14,12 @@ The `employees` database structure is as defined at;
 First create a `configs.json` file at the root of the project with values that follow 
 those given in the `configs.json.example` file.
 
+Install the package dependencies with _NPM_;  
+```bash
+npm install
+```
+
+
 Then start the API-Server through;
 ```bash
 npm run start
