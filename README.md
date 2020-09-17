@@ -29,6 +29,8 @@ This will start the express server at `localhost:8075`
 
 
 ### Endpoints
+- GET /
+return welcome html content
 
 - GET /departments  
 return all `departments` table entries
