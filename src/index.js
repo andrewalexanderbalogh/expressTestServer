@@ -101,11 +101,11 @@ app.get('/employee/:emp_no', (req, res) => {
 
 
 /* DB call to fetch employees by gender and hire date
-*  GET http://localhost:8075/employees?gender=M&hire_date=2020-01-01
+*  GET http://localhost:8075/employees?gender=M&higher_date=2020-01-01
 */
 app.get('/employees', (req, res) => {
     const gender = req.query.gender;
-    const hire_date = req.query.hire_date;
+    const hire_date = req.query.higher_date;
 
 
     const mysql = require('mysql').createConnection(require('./../configs').mysql);
